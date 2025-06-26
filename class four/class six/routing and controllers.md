@@ -14,14 +14,6 @@ Great set of questions! Let’s break down each one clearly.
 **Purpose:**
 Routing is how Express **defines how the application responds** to client requests for a specific endpoint (path + HTTP method).
 
-**Example:**
-
-```js
-app.get('/users', (req, res) => {
-  res.send('User list');
-});
-```
-
 * Each route matches a **path and HTTP verb** (GET, POST, etc.)
 * It's like the "traffic controller" directing requests to the correct logic.
 
@@ -32,12 +24,6 @@ Controllers are **functions that contain the business logic** — what should ha
 
 **Example:**
 
-```js
-// userController.js
-exports.getAllUsers = (req, res) => {
-  res.send('List of users');
-};
-```
 
 **Difference:**
 
@@ -78,87 +64,3 @@ exports.getAllUsers = (req, res) => {
 ---
 
 ### **3. Organizing Routes in Express.js for Better Code Structure**
-
-Here’s a **recommended folder structure** for larger Express apps:
-
-```
-project/
-│
-├── controllers/
-│   └── userController.js
-│
-├── routes/
-│   └── userRoutes.js
-│
-├── models/
-│   └── userModel.js
-│
-├── app.js
-└── server.js
-```
-
-#### 🧱 **Implementation Example:**
-
-**`routes/userRoutes.js`**
-
-```js
-const express = require('express');
-const userController = require('../controllers/userController');
-
-const router = express.Router();
-
-router.get('/', userController.getAllUsers);
-router.post('/', userController.createUser);
-
-module.exports = router;
-```
-
-**`controllers/userController.js`**
-
-```js
-exports.getAllUsers = (req, res) => {
-  res.send('List of users');
-};
-
-exports.createUser = (req, res) => {
-  res.send('User created');
-};
-```
-
-**`app.js`**
-
-```js
-const express = require('express');
-const userRoutes = require('./routes/userRoutes');
-
-const app = express();
-app.use(express.json());
-
-app.use('/api/v1/users', userRoutes);
-
-module.exports = app;
-```
-
-**`server.js`**
-
-```js
-const app = require('./app');
-
-const PORT = 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
-```
-
----
-
-### ✅ Summary
-
-| Concept                 | Purpose                                             |
-| ----------------------- | --------------------------------------------------- |
-| **Routing**             | Directs HTTP requests to the appropriate controller |
-| **Controller**          | Contains logic for handling the request             |
-| **Separation**          | Promotes modular, testable, and scalable code       |
-| **Organized Structure** | Makes the app easier to navigate and maintain       |
-
-Would you like a boilerplate Express.js project with this structure to start from?

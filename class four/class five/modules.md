@@ -4,15 +4,6 @@
 
 ### 1. **Difference between ES6 modules and CommonJS modules**
 
-| Feature            | **ES6 Modules**                                     | **CommonJS Modules**                            |
-| ------------------ | --------------------------------------------------- | ----------------------------------------------- |
-| **Syntax**         | `import` / `export`                                 | `require()` / `module.exports`                  |
-| **Loading**        | Static — imports are resolved at compile time       | Dynamic — modules loaded at runtime             |
-| **Usage**          | Standard in modern JavaScript (browser & Node)      | Mainly used in Node.js                          |
-| **Example import** | `import { foo } from './module.js';`                | `const foo = require('./module.js');`           |
-| **Example export** | `export function foo() {}` or `export default foo;` | `module.exports = foo;` or `exports.foo = foo;` |
-
----
 
 ### 2. **Ways to export functions and variables**
 
@@ -34,9 +25,6 @@ export const name = "Alice";
 export default function greet() {
   return "Hi!";
 }
-```
-
----
 
 #### In **CommonJS Modules:**
 

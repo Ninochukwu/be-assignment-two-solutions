@@ -21,27 +21,9 @@
 | **Avoids Code Duplication** | Smart control structures reduce redundant logic.                                                   |
 | **Improves Readability**    | Consistent use of clear conditionals and loop logic helps other developers (and your future self). |
 
-**Example:**
-
-```js
-if (user.isAdmin) {
-  return res.send('Welcome, Admin');
-} else {
-  return res.status(403).send('Access denied');
-}
-```
-
-✅ **Clean control flow = easier debugging, testing, and readability.**
-
----
-
 ### **2. Arrow Functions vs Traditional Function Declarations**
 
 #### ✅ **Arrow Functions** (`=>`)
-
-```js
-const add = (a, b) => a + b;
-```
 
 **Advantages:**
 
@@ -57,12 +39,6 @@ const add = (a, b) => a + b;
 ---
 
 #### ✅ **Traditional Function Declarations**
-
-```js
-function add(a, b) {
-  return a + b;
-}
-```
 
 **Advantages:**
 
@@ -96,37 +72,3 @@ function add(a, b) {
 * Function chaining and composition
 * Declarative over imperative code
 
-#### ✅ Array Methods in Action
-
-| Method   | Description                               | Functional Benefit         |
-| -------- | ----------------------------------------- | -------------------------- |
-| `map`    | Transforms each item in an array          | Pure transformation        |
-| `filter` | Removes elements based on a condition     | Declarative data selection |
-| `reduce` | Combines all elements into a single value | Flexible data aggregation  |
-
-**Example:**
-
-```js
-const numbers = [1, 2, 3, 4];
-
-// Double each number
-const doubled = numbers.map(n => n * 2);
-
-// Get only even numbers
-const evens = numbers.filter(n => n % 2 === 0);
-
-// Sum all numbers
-const sum = numbers.reduce((total, n) => total + n, 0);
-```
-
-✅ These methods **avoid mutation**, keep logic **concise and reusable**, and fit perfectly into **Express controller logic**, especially when dealing with arrays of data from a DB or API.
-
----
-
-### ✅ Summary
-
-| Question                           | Key Takeaway                                                                                                        |
-| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| **Control Flow**                   | Makes logic predictable, readable, and testable.                                                                    |
-| **Arrow vs Traditional Functions** | Arrow functions are concise and best for small logic; traditional functions are better for context-dependent tasks. |
-| **`map` / `filter` / `reduce`**    | These embrace functional programming—clean, declarative, and powerful for working with data.                        |

@@ -2,8 +2,6 @@
 2. Explain the basic structure of an Express.js application.
 3. How do you create a simple GET route in Express.js?
 
-
-
 ### 1. **What is Express.js and its role in Node.js web development?**
 
 * **Express.js** is a popular web framework for **Node.js**.
@@ -17,18 +15,8 @@
 An Express app usually looks like this:
 
 ```js
-const express = require('express');  // Import Express
-const app = express();               // Create an app
-
-// Define routes here (e.g., app.get, app.post)
-
-// Start the server
-app.listen(3000, () => {
-  console.log('Server running on port 3000');
-});
-```
-
----
+const express = require('express'); 
+const app = express();           
 
 ### 3. **How to create a simple GET route in Express.js**
 
@@ -44,4 +32,3 @@ app.get('/', (req, res) => {
 * `'/'` is the URL path.
 * `req` is the request object, `res` is the response object.
 * `res.send` sends a response back to the browser.
-
